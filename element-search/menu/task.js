@@ -9,4 +9,3 @@ for (let link of arrayOfLinks) {
     });
   }
 }
-
