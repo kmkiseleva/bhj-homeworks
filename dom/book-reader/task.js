@@ -1,5 +1,22 @@
 const book = document.getElementById("book");
 
+function removeFzClasses() {
+  book.classList.remove("book_fs-small");
+  book.classList.remove("book_fs-big");
+}
+
+function removeColorClasses() {
+  book.classList.remove("book_color-black");
+  book.classList.remove("book_color-gray");
+  book.classList.remove("book_color-whitesmoke");
+}
+
+function removeBgClasses() {
+  book.classList.remove("book_bg-black");
+  book.classList.remove("book_bg-gray");
+  book.classList.remove("book_bg-white");
+}
+
 // FONT SIZE
 let fz = document.querySelectorAll(".font-size");
 const fzArr = [...fz];
@@ -21,8 +38,7 @@ for (let item of fzArr) {
       book.classList.remove("book_fs-small");
       book.classList.add("book_fs-big");
     } else {
-      book.classList.remove("book_fs-big");
-      book.classList.remove("book_fs-small");
+      removeFzClasses();
     }
     indexSize = fzArr.indexOf(item);
   });
@@ -43,17 +59,14 @@ for (let color of colorArr) {
     colorArr[indexColor].classList.remove("color_active");
     color.classList.add("color_active");
     if (color.classList.contains("text_color_black")) {
+      removeColorClasses();
       book.classList.add("book_color-black");
-      book.classList.remove("book_color-whitesmoke");
-      book.classList.remove("book_color-gray");
     } else if (color.classList.contains("text_color_gray")) {
+      removeColorClasses();
       book.classList.add("book_color-gray");
-      book.classList.remove("book_color-black");
-      book.classList.remove("book_color-whitesmoke");
     } else if (color.classList.contains("text_color_whitesmoke")) {
+      removeColorClasses();
       book.classList.add("book_color-whitesmoke");
-      book.classList.remove("book_color-black");
-      book.classList.remove("book_color-gray");
     }
     indexColor = colorArr.indexOf(color);
   });
@@ -74,17 +87,14 @@ for (let bg of bgColorsArr) {
     bgColorsArr[indexBg].classList.remove("color_active");
     bg.classList.add("color_active");
     if (bg.classList.contains("bg_color_black")) {
+      removeBgClasses();
       book.classList.add("book_bg-black");
-      book.classList.remove("book_bg-white");
-      book.classList.remove("book_bg-gray");
     } else if (bg.classList.contains("bg_color_gray")) {
+      removeBgClasses();
       book.classList.add("book_bg-gray");
-      book.classList.remove("book_bg-black");
-      book.classList.remove("book_bg-white");
     } else if (bg.classList.contains("bg_color_white")) {
+      removeBgClasses();
       book.classList.add("book_bg-white");
-      book.classList.remove("book_bg-black");
-      book.classList.remove("book_bg-gray");
     }
     indexBg = bgColorsArr.indexOf(bg);
   });
