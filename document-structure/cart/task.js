@@ -1,3 +1,4 @@
+"use strict";
 // корзина и товары
 const cart = document.querySelector(".cart__products");
 const products = [...document.querySelectorAll(".product")];

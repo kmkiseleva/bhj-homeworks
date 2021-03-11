@@ -1,3 +1,4 @@
+"use strict";
 const input = document.getElementById("task__input");
 const add = document.getElementById("tasks__add");
 const tasksList = document.getElementById("tasks__list");
