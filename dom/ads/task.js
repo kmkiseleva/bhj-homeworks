@@ -1,3 +1,4 @@
+"use strict";
 let rotatorCase = document.querySelectorAll(".rotator__case");
 const rotatorsArr = [...rotatorCase];
 
