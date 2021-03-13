@@ -1,5 +1,4 @@
 "use strict";
-
 const progress = document.getElementById("progress");
 progress.value = 0.0;
 
