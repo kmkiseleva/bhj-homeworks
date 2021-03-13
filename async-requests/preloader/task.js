@@ -1,13 +1,15 @@
+"use strict";
+
 const animation = document.getElementById("loader");
 const item = document.getElementById("items");
 
 let xhr = new XMLHttpRequest();
 xhr.open("GET", "https://netology-slow-rest.herokuapp.com/");
 xhr.send();
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4) {
+xhr.addEventListener("readystatechange", () => {
+  if (xhr.readyState === xhr.DONE) {
     animation.classList.remove("loader_active");
-    let result = JSON.parse(xhr.responseText);
+    const result = JSON.parse(xhr.responseText);
     const valutes = Object.values(result.response.Valute);
 
     valutes.forEach((element) => {
@@ -17,4 +19,4 @@ xhr.onreadystatechange = function () {
       );
     });
   }
-};
+});
