@@ -35,3 +35,12 @@ body {
 .welcome_active {
   display: block;
 }
+
+.exit {
+  display: none;
+}
+
+.exit_active {
+  margin-top: 10px;
+  display: block;
+}
