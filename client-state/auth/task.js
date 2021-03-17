@@ -17,9 +17,7 @@ function hideForm() {
 
 // очистить данные из полей формы
 function clear() {
-  inputs.forEach((input) => {
-    input.value = "";
-  });
+  form.reset();
 }
 
 // показать приветствие
@@ -77,7 +75,7 @@ if (userId) {
 }
 
 exit.addEventListener("click", () => {
-  localStorage.clear();
+  localStorage.removeItem("userId");
   showForm();
   hideWelcome();
   hideLogout();

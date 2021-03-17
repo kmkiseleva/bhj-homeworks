@@ -1,7 +1,20 @@
 const modal = document.getElementById("subscribe-modal");
 const modalClose = document.querySelector(".modal__close");
 
-if (!document.cookie) {
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+
+  for (const cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) {
+      return decodeURIComponent(value);
+    }
+  }
+
+  return null;
+}
+
+if (getCookie("status") !== "Modal Was Closed") {
   modal.classList.add("modal_active");
 } else {
   modal.classList.remove("modal_active");
